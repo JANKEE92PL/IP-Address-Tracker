@@ -1,0 +1,13 @@
+.btn {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.bg-pattern {
+  height: 30vh;
+  background-image: url("./assets/css/images/pattern-bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: aqua;
+}
