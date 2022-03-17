@@ -27,5 +27,18 @@
   background-image: url("images/icon-arrow.svg");
   background-repeat: no-repeat;
   background-position: center;
-  padding: 20px;
+  padding: 28px;
+}
+.border-half-right {
+  position: relative;
+}
+
+.border-half-right::after {
+  content: "";
+  width: 10px;
+  height: 50%;
+  border-right: 1px solid lightgray;
+  position: absolute;
+  top: 25%;
+  right: 5%;
 }
