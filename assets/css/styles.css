@@ -42,3 +42,12 @@
   top: 25%;
   right: 5%;
 }
+.rounded-18 {
+  border-radius: 18px;
+}
+
+.overlap {
+  position: absolute;
+  top: 29%;
+  left: 15%;
+}
