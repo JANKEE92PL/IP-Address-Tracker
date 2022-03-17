@@ -4,10 +4,28 @@
 }
 
 .bg-pattern {
-  height: 30vh;
-  background-image: url("./assets/css/images/pattern-bg.png");
+  height: 35vh;
+  background-image: url("images/pattern-bg.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-color: aqua;
+}
+
+.search {
+  width: 50%;
+  margin: 0px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  padding: 8px;
+  border-radius: 16px;
+  border-style: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.arrow {
+  background-image: url("images/icon-arrow.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 20px;
 }
