@@ -36,7 +36,7 @@ const showInput = (data) => {
 };
 
 //* Geocoding
-const geocodingAPI = (place) => {
+const geocodingAPI = (place = "Brooklyn") => {
   fetch(
     `https://api.mapbox.com/geocoding/v5/mapbox.places/${place}.json?access_token=pk.eyJ1IjoiYWRvbGYxOTQ1IiwiYSI6ImNreTAxOTM1NjAxZWwyeHM3ZmxqeHRpanYifQ.4TMiWW2WNO75JWYlnLQcHA`
   )
