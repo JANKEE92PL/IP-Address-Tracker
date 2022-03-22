@@ -33,3 +33,14 @@ const showInput = (data) => {
   timezone.innerText = data.location.timezone;
   isp.innerText = data.isp;
 };
+
+
+
+mapboxgl.accessToken =
+  "pk.eyJ1IjoiYWRvbGYxOTQ1IiwiYSI6ImNreTAxOTM1NjAxZWwyeHM3ZmxqeHRpanYifQ.4TMiWW2WNO75JWYlnLQcHA";
+const map = new mapboxgl.Map({
+  container: "map", // container ID
+  style: "mapbox://styles/mapbox/streets-v11", // style URL
+  center: [-74.5, 40], // starting position [lng, lat]
+  zoom: 9, // starting zoom
+});
