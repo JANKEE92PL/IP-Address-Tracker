@@ -20,6 +20,7 @@ const searchBTN = getElement("#searchBTN");
 searchBTN.addEventListener("click", (e) => {
   let input = getInput();
   ApiCall(input);
+  geocodingAPI(input);
 });
 
 const ipAddress = getElement("#ip");
@@ -34,13 +35,22 @@ const showInput = (data) => {
   isp.innerText = data.isp;
 };
 
-
-
-mapboxgl.accessToken =
-  "pk.eyJ1IjoiYWRvbGYxOTQ1IiwiYSI6ImNreTAxOTM1NjAxZWwyeHM3ZmxqeHRpanYifQ.4TMiWW2WNO75JWYlnLQcHA";
-const map = new mapboxgl.Map({
-  container: "map", // container ID
-  style: "mapbox://styles/mapbox/streets-v11", // style URL
-  center: [-74.5, 40], // starting position [lng, lat]
-  zoom: 9, // starting zoom
-});
+//* Geocoding
+const geocodingAPI = (place) => {
+  fetch(
+    `https://api.mapbox.com/geocoding/v5/mapbox.places/${place}.json?access_token=pk.eyJ1IjoiYWRvbGYxOTQ1IiwiYSI6ImNreTAxOTM1NjAxZWwyeHM3ZmxqeHRpanYifQ.4TMiWW2WNO75JWYlnLQcHA`
+  )
+    .then((response) => response.json())
+    .then((data) => createMAP(data));
+  // .then((data) => console.log("GEOCODING API", data));
+};
+const createMAP = (data) => {
+  https: mapboxgl.accessToken =
+    "pk.eyJ1IjoiYWRvbGYxOTQ1IiwiYSI6ImNreTAxOTM1NjAxZWwyeHM3ZmxqeHRpanYifQ.4TMiWW2WNO75JWYlnLQcHA";
+  const map = new mapboxgl.Map({
+    container: "map", // container ID
+    style: "mapbox://styles/mapbox/streets-v11", // style URL
+    center: [data.features[0].center[0], data.features[0].center[1]], // starting position [lng, lat]
+    zoom: 9, // starting zoom
+  });
+};
